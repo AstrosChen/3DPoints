@@ -212,10 +212,10 @@ class ThreeDWorld {
         let basePath, pathName, pathFomat;
         let promiseArr = pathArr.map((path) => {
             basePath = path.substring(0, path.lastIndexOf('/') + 1);
-            pathName = path.substring( path.lastIndexOf('.') +1, path.length);
+            pathName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
             // 后缀为js或json的文件统一当做js格式处理
-            pathName = pathName === 'json' ? 'js' : pathName;
             pathFomat = path.substring(path.lastIndexOf('.') + 1).toLowerCase();
+            pathName = pathName === 'json' ? 'js' : pathName;
             switch (pathFomat) {
                 case 'js':
                     return new Promise(function(resolve) {
