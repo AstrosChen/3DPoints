@@ -215,7 +215,7 @@ class ThreeDWorld {
             pathName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
             // 后缀为js或json的文件统一当做js格式处理
             pathFomat = path.substring(path.lastIndexOf('.') + 1).toLowerCase();
-            pathName = pathName === 'json' ? 'js' : pathName;
+            pathFomat = pathFomat === 'json' ? 'js' : pathFomat;
             switch (pathFomat) {
                 case 'js':
                     return new Promise(function(resolve) {
